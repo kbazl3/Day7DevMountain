@@ -7,11 +7,16 @@
   // 2) What are the four rules that govern what the 'this keyword' is bound to and describe each?
 
       //Answer
-
+      /*4 rules of "this"
+1. implicit binding
+2. explicit binding (call(), apply(), bind()),
+3. default binding
+4.
+8*/
   // 3) What is the difference between call and apply?
 
       //Answer
-
+      //apply uses an array as a parameter and call does not
   // 4) What does .bind do?
 
       //Answer
@@ -33,22 +38,23 @@
         return this.username;
       }
     };
-
 //Now, invoke the getUsername method and verify you got the username of the object and not anything else.
-user.getUsername();
-
+//user.getUsername();
 //Next Problem
 
 
 // Write the function definitions which will make the following function invocations function properly.
 function Car(make, model, year) {
-    this.make = make;
-    this.model = model;
-    this.year = year;
-    var that = this;
-    this.moveCar: function {
-      return that.moveCar + 10;
-    }
+    var myCar = {
+        carMake: make,
+        carModel: model,
+        carYear: year,
+        move: 0,
+        moveCar: function() {
+          return this.move + 10;
+     }
+     }
+     return myCar;
 };
 
   //Function Invocations Here
